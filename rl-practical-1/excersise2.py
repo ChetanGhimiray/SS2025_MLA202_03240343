@@ -1,37 +1,39 @@
 import gymnasium as gym
+import time
 
-# Create the FrozenLake environment
-env = gym.make("FrozenLake-v1")
+env = gym.make("FrozenLake-v1", render_mode=None)
 
-# Number of episodes to run
+print(f"Action Space: {env.action_space}")
+print(f"Observation Space: {env.observation_space}")
+
 num_episodes = 1000
+episode_number = 0
 rewards_per_episode = []
+for episode in range(num_episodes): #Outer loop
+    episode_number+=1
 
-for episode in range(num_episodes):
-    # Reset environment at the start of each episode
     observation, info = env.reset()
-    terminated, truncated = False, False
-    episode_reward = 0
 
-    while not terminated and not truncated:
-        # Choose a random action
+    terminated = False
+    truncated = False
+    total_reward = 0.0
+    while not terminated and not truncated: #Inner loop
+        # ... take a random step ...
+        # ... update episode_reward ...
+   
         action = env.action_space.sample()
+        f"Taking action: {action} (0:L, 1:D, 2:R, 3:U)"
 
-        # Take the step in the environment
         next_observation, reward, terminated, truncated, info = env.step(action)
 
-        # Add the reward
-        episode_reward += reward
-
-        # Update observation (not needed for random agent but included for clarity)
+        total_reward +=reward
         observation = next_observation
-
-    # Store the reward from this episode
-    rewards_per_episode.append(episode_reward)
-
-# After all episodes, compute the average reward
-average_reward = sum(rewards_per_episode) / num_episodes
+        rewards_per_episode.append(total_reward)
+        # Append the final reward for this episode to the list
+    
+    print(f"\nEpisode:{episode_number} \nReward: {total_reward}\n")
+average_reward = sum(rewards_per_episode) / num_episodes 
+print('\nEpisode finished!\nTotal_reward:',sum(rewards_per_episode))
 print(f"Average reward over {num_episodes} episodes: {average_reward:.4f}")
 
-# Close the environment
 env.close()
