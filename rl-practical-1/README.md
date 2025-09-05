@@ -17,5 +17,10 @@
 # 4.The final average reward you calculated for the random agent in Exercise 2. was Average reward over 1000 episodes:     0.0170
 https://github.com/ChetanGhimiray/SS2025_MLA202_03240343/blob/master/rl-practical-1/Screenshot%202025-09-05%20095814.png
 
+# Challenges Faced:While doing this practical I face some problems. First, when importing gymnasium I get error because I did not install the package properly. After installing with pip install gymnasium it worked. Another problem was with render_mode="human", sometimes window not open or it close fast, so I had to restart kernel. Also it was little confusing to understand the meaning of observation values because they are numbers but I don’t know which one is position or angle. Running the loop also gave many print outputs which was hard to read.
+
+# Key Take Away: From this practical I learn how environment and agent connect in gymnasium.I know the difference between observation space and action space, and how step by step the enviroment updates. Even with small error, I understood the basic idea of reinforcement learning.
+
+
 
 
