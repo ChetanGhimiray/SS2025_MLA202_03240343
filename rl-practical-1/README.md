@@ -15,6 +15,7 @@
 # The reward is +1 for every timestep that the pole remains upright and the cart does not go out of bounds. So the longer the pole is balanced, the higher the total reward.
 
 # 4.The final average reward you calculated for the random agent in Exercise 2. was Average reward over 1000 episodes:     0.0170
+https://github.com/ChetanGhimiray/SS2025_MLA202_03240343/blob/master/rl-practical-1/Screenshot%202025-09-05%20095814.png
 
 
 
